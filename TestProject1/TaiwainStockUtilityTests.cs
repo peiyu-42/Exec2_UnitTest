@@ -22,7 +22,7 @@ namespace TestProject1
 
 		[TestCase("2022/10/27 8:59:59")]
 		[TestCase("2022/10/27 13:30:1")]
-		public void TradingTimeTest_不是營業時間傳回false(string dt)
+		public void TradingTimeTest_不在營業時間內傳回false(string dt)
 		{
 			var obj = new TaiwainStockUtility();
 
@@ -33,7 +33,7 @@ namespace TestProject1
 
 		[TestCase("2022/10/27 9:00:00")]
 		[TestCase("2022/10/27 13:30:00")]
-		public void TradingTimeTest_在營業的日期與時間內傳回true(string dt)
+		public void TradingTimeTest_在週一到週五的營業時間內傳回true(string dt)
 		{
 			var obj = new TaiwainStockUtility();
 
