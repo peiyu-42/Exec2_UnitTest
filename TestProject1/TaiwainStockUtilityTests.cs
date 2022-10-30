@@ -9,8 +9,8 @@ namespace TestProject1
 {
 	internal class TaiwainStockUtilityTests
 	{
-		[TestCase("2022/10/29")]
-		[TestCase("2022/10/30")]
+		[TestCase("2022/10/29 9:01:00")]
+		[TestCase("2022/10/30 13:29:00")]
 		public void TradingTimeTest_星期六日傳回false(string dt)
 		{
 			var obj = new TaiwainStockUtility();
@@ -21,7 +21,7 @@ namespace TestProject1
 		}
 
 		[TestCase("2022/10/27 8:59:59")]
-		[TestCase("2022/10/27 13:30:1")]
+		[TestCase("2022/10/27 13:30:01")]
 		public void TradingTimeTest_不在營業時間內傳回false(string dt)
 		{
 			var obj = new TaiwainStockUtility();
